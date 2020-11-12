@@ -1,1 +1,1 @@
-# Statistical-projects-in-R
+# Data Science & Statistical Analysis Portfolio
