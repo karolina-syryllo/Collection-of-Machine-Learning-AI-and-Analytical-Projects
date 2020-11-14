@@ -107,9 +107,13 @@ Fig.6: On the left: Training and validation loss, On the right: Confusion matrix
 Fig.7: On the left: Training and validation loss, On the right: Confusion matrix 
 
 Increasing kernel size was not beneficial in this case because this resulted in an increase in validation loss to 1.385 as compared to kernel size of 4x4 (see Fig. 7). However, test accuracy increased to 55%. 
+
 Summary: 
+
 In terms of overfitting, kernel size did not have any direct effect as in all cases validation loss decreases in line with training loss. However, there was an effect on test accuracy and the value of validation loss. 
+
 After changing filter size in all layers to a different size, accuracy was lower in all cases as compared to the accuracy from the previous part which reached 57%. The same applies to validation loss which was higher after changing the filter size. 
+
 While choosing the best architecture, I looked at the validation loss and tried to achieve the lowest possible validation loss. Therefore, I can conclude that the best architecture was the one obtained in the first part (see Fig. 4).
 
 
@@ -117,27 +121,33 @@ While choosing the best architecture, I looked at the validation loss and tried 
 ## 3. Filter visualisation
 
 Filters before training
-
+![before](https://user-images.githubusercontent.com/61549398/99156369-477acc00-26b8-11eb-8889-173390367fb0.png)
  
 Filters during training
+
+![during](https://user-images.githubusercontent.com/61549398/99156370-49448f80-26b8-11eb-9c62-3f41e571df16.png)
  
 Filters after training
+
+![after](https://user-images.githubusercontent.com/61549398/99156371-4a75bc80-26b8-11eb-9af9-50a2abfa78c3.png)
  
 Fig.8: Visualisation of filters from
 
 In convolutional neural networks, filters are learnable parameters and the goal of the training is to find appropriate set of weights to classify images correctly. The weights in neural networks are initialized randomly hence filters before training do not have any interpretation as they change every time the model is run. Throughout the training, the values of filters are adjusted using Stochastic Gradient Descent through Backpropagation. 
+
 As we can see on the picture above (see Fig. 8), filters during training are similar to filters before training. We can easily notice that in many cases the general pattern of the filter remains the same with only few boxes (weights) changed slightly in terms of the brightness. This suggests that not all weights had to be updated. In few cases, weights are unchanged between and during training. 
+
 Similarly, filters after training are similar to filters during and before training. However, the degree of similarity is greater between filters after training and during training as compared to filters after training and before training. This is caused by the fact that weights have been updated by smaller values within 10 epochs (during training) as compared to 20 epochs (after whole training).
 
 
 
 ## 4. Feature maps 
 
+Visualisation of feature maps for two different images.
 
- 
+![map1](https://user-images.githubusercontent.com/61549398/99156444-c5d76e00-26b8-11eb-9141-ebef3a723125.png)
 
-
- 
+![map2](https://user-images.githubusercontent.com/61549398/99156445-c7089b00-26b8-11eb-8c43-9d9fcce3f2f1.png)
 
 Fig.9: Feature maps.
 
@@ -147,11 +157,17 @@ In case of both pictures, feature maps resolution decreases with each additional
 
 ## 5. Best architecture 
 
-Each dataset is unique and therefore there is no single answer to the question of how to improve network performance. Usually finding the best architecture is the result of conducting a number of experiments. Therefore, in this part I decided to conduct few additional experiments with several other parameters namely: number of outputs in convolutional layers, number of fully connected layers, number of outputs in fully connected layer and the number of epochs 
+Each dataset is unique and therefore there is no single answer to the question of how to improve network performance. Usually finding the best architecture is the result of conducting a number of experiments. Therefore, in this part I decided to conduct few additional experiments with several other parameters namely: number of outputs in convolutional layers, number of fully connected layers, number of outputs in fully connected layer and the number of epochs.
+
 I started with the architecture obtained in part 1 (see Fig. 4) and I was changing each of the parameters one by one to analyse their effect on the network performance. 
 Increasing and decreasing number of outputs in each convolutional layer did not result in higher accuracy. In most cases accuracy dropped and validation loss increased. 
 The above statements also apply to increasing the number of fully connected layers. 
+
 The best results I obtained by experimenting with different number of outputs in the first fully connected layer leaving the original number of fully connected layer as two. After decreasing number of outputs to 256, accuracy increased by 1% up to 59% which was the best results obtained up to that point.
+
+![left](https://user-images.githubusercontent.com/61549398/99156489-2070ca00-26b9-11eb-9258-36f44f957217.png)
+![right](https://user-images.githubusercontent.com/61549398/99156490-21096080-26b9-11eb-8451-1fac20481e9b.png)
+
 
  
 Fig.10: On the left: Validation and training loss after decreasing number of outputs in fc1 to 256. 
