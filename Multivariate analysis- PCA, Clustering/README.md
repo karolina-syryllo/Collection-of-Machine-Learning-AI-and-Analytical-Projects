@@ -122,8 +122,21 @@ Standardized coefficients of discriminant function are displayed in the table be
 ![table](https://user-images.githubusercontent.com/61549398/99195436-7e66e580-277d-11eb-909e-ec98fbde0f31.png)
 
 
-
-
-
 We can see that many coefficients are 0 or close to 0 what suggests that their corresponding variables are not important in classifying countries into Low/High income group. However, there is one variable with significantly higher value as compared to other coefficients and corresponds to variable named: health2 with coefficient value of -6.422. In out dataset that variable indicates number of babies per woman. Therefore, the variable which contributes the most to separation of those 2 groups is number of children per woman. In fact, if we grouped our dataset according to the number of children in descending order, we could see that the first 14 countries belong to Low Income or Lower Middle Income. On the other hand, if countries were grouped in ascending order relative to health2 variable, the majority of the first 14 countries belong to High Income group. In order to check whether algorithm classify countries correctly, we can also take out 1 country from the dataset and check whether correct group is assigned.
-References Brems, M., 2017. A One-Stop Shop For Principal Component Analysis. [online] Medium. Available at: <https://towardsdatascience.com/a-one-stop-shop-for-principal-component-analysis-5582fb7e0a9c> [Accessed 1 May 2020]. Lever, J., Krzywinski, M. and Altman, N., 2017. Principal Component Analysis. [online] Nature Methods. Available at: <https://www.nature.com/articles/nmeth.4346> [Accessed 28 April 2020]. Hazarika, N. and Hazarika, N., 2013. Correlation And Data Transformations -. [online] Majestic Blog. Available at: <https://blog.majestic.com/case-studies/correlation-data-transformations/> [Accessed 26 April 2020]. Hayden, L., 2018. PCA Analysis In R. [online] DataCamp Community. Available at: <https://www.datacamp.com/community/tutorials/pca-analysis-r> [Accessed 4 May 2020]. Ngo, L., 2018. How To Read PCA Biplots And Scree Plots - Bioturing's Blog. [online] BioTuring's Blog. Available at: <https://blog.bioturing.com/2018/06/18/how-to-read-pca-biplots-and-scree-plots/> [Accessed 25 April 2020]. Lopes, M., 2017. Is LDA A Dimensionality Reduction Technique Or A Classifier Algorithm?. [online] Medium. Available at: <https://towardsdatascience.com/is-lda-a-dimensionality-reduction-technique-or-a-classifier-algorithm-eeed4de9953a> [Accessed 24 April 2020]. Fawcett, T. and Provost, F., 2013. Data Science For Business. 1st ed. O'Reilly, p.21.
+
+
+## References 
+
+Brems, M., 2017. A One-Stop Shop For Principal Component Analysis. [online] Medium. Available at: <https://towardsdatascience.com/a-one-stop-shop-for-principal-component-analysis-5582fb7e0a9c> [Accessed 1 May 2020]. 
+
+Lever, J., Krzywinski, M. and Altman, N., 2017. Principal Component Analysis. [online] Nature Methods. Available at: <https://www.nature.com/articles/nmeth.4346> [Accessed 28 April 2020]. 
+
+Hazarika, N. and Hazarika, N., 2013. Correlation And Data Transformations -. [online] Majestic Blog. Available at: <https://blog.majestic.com/case-studies/correlation-data-transformations/> [Accessed 26 April 2020]. 
+
+Hayden, L., 2018. PCA Analysis In R. [online] DataCamp Community. Available at: <https://www.datacamp.com/community/tutorials/pca-analysis-r> [Accessed 4 May 2020]. 
+
+Ngo, L., 2018. How To Read PCA Biplots And Scree Plots - Bioturing's Blog. [online] BioTuring's Blog. Available at: <https://blog.bioturing.com/2018/06/18/how-to-read-pca-biplots-and-scree-plots/> [Accessed 25 April 2020]. 
+
+Lopes, M., 2017. Is LDA A Dimensionality Reduction Technique Or A Classifier Algorithm?. [online] Medium. Available at: <https://towardsdatascience.com/is-lda-a-dimensionality-reduction-technique-or-a-classifier-algorithm-eeed4de9953a> [Accessed 24 April 2020]. 
+
+Fawcett, T. and Provost, F., 2013. Data Science For Business. 1st ed. O'Reilly, p.21.
