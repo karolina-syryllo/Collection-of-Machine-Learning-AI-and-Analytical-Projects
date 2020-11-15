@@ -30,6 +30,12 @@ Figure 1: Performance of LSTM during training on two images.
   
 ###### RNN MODEL
 
+![IM1RNN](https://user-images.githubusercontent.com/61549398/99193657-5920aa00-2772-11eb-8c93-4bfbbf287a03.png)
+![CAP1RNN](https://user-images.githubusercontent.com/61549398/99193661-5a51d700-2772-11eb-9e9e-09e4dcefd207.png)
+
+![IM2RNN](https://user-images.githubusercontent.com/61549398/99193725-be749b00-2772-11eb-946a-0bed55bd9b52.png)
+![CAP2RNN](https://user-images.githubusercontent.com/61549398/99193726-c0d6f500-2772-11eb-9b59-0444f2c31aa4.png)
+
 Figure 2: Performance of RNN model during training on two images.
 
 ## 2.Comparing training using an RNN vs LSTM for the decoder network (loss, BLEU scores over test set, quality of generated captions, performance on long captions vs. short captions, etc.)
