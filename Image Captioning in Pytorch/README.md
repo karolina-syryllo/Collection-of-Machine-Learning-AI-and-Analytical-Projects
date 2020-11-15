@@ -66,7 +66,9 @@ Bleu score calculated over the whole test set confirmed the above results.
 This time the Bleu score was calculated for each single image in the test set. The results were then aggregated and divided by the number of images what gave us the average Bleu score for each model.
   
 The results are as follows: 
+
 Bleu score over test set for LSTM is 0.48773541110981267 
+
 Bleu score over test set for RNN is 0.47576659190283077 
 
 Although the performance of LSTM is slightly higher than RNN, the difference is not significant, therefore further analysis is required.
@@ -74,14 +76,20 @@ Although the performance of LSTM is slightly higher than RNN, the difference is 
 ###### PERFORMANCE ON LONG VS SHORT CAPTIONS
   
 Two models were evaluated in terms of their performance on long vs short captions using Bleu score metric.
+
 The Bleu score was calculated separately for long vs short captions for each model. Decision as to whether assign a generated caption to long or short category was based on the average length of reference captions. Because of the fact that we have 5 reference captions agaisnt 1 generated caption, the total number of tokens for all 5 reference captions was calculated and then divided by 5 what allowed me to obtain the average number of tokens for each set of reference caption. I then compared the number of tokens from generated caption against the average number of tokens for reference caption. Generated caption was classified as long if its number of tokens was greater than the average number of tokens for a corresponding set of reference caption.
   
 The bleu score was calculated using the same weights as before including smoothing function with method 7.
+
 The results are as follows:
   
-RNN Bleu score for short caption: 0.4022034590856351 Bleu score for long caption: 0.35662719914252705
+RNN Bleu score for short caption: 0.4022034590856351 
 
-LSTM Bleu score for short caption: 0.4259603787052534 Bleu score for long caption: 0.38259930514032164
+RNNBleu score for long caption: 0.35662719914252705
+
+LSTM Bleu score for short caption: 0.4259603787052534 
+
+LSTM Bleu score for long caption: 0.38259930514032164
 
 We can see that both models performed better in short captions as compared to long captions resulting in higher bleu scores for short captions.
 The results confirm out previous findings from section 3.1.2 whereas bleu scores for both models were calculated over the whole test set. Again performance of LSTM is better than LSTM.
