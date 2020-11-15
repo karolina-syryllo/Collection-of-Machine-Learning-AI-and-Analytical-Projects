@@ -24,12 +24,13 @@ In the first step I looked at distribution of each variable to see whether they 
 Firstly, correlations were investigated before data transformation. Results of the analysis for group Health are shown below (see Figure 1):
 
 ![left](https://user-images.githubusercontent.com/61549398/99194749-73aa5180-2779-11eb-8df1-38930b667b1d.png)
+
 ![right](https://user-images.githubusercontent.com/61549398/99194750-7442e800-2779-11eb-9c5e-ac1279311fc4.png)
 
 
-Left- Figure 1: Health indicators before data transformation 
+Top- Figure 1: Health indicators before data transformation 
 
-Right- Figure 2: Health indicators after applying logarithmic transformation
+Bottom- Figure 2: Health indicators after applying logarithmic transformation
 
 The plots above show scatterplots for each variable pair as well as their corresponding correlation coefficient. Values close to 1 indicate strong positive correlation, while values close to -1 indicate strong negative correlation. On the other hand, values close to 0 suggest there is no correlation between variables.
 
