@@ -1,4 +1,14 @@
 # Image Classification with Convolutional Neural Networks - ImageNet10 <h1> 
+	
+	This is an image classification project completed in Pytorch using a famous ImageNet10 dataset containing 10 classes of images. 
+	Aims of the projects:
+	
+	- Assess the effect of convolutional layers and kernel size on model's performance,
+	- Visualizee and compare filters before training, during training and after training,
+	- Visualize and analyse feature maps for two different images.
+	- Finding the best architecture
+	
+	
 
 ## 1. Testing the effect of the number of convolutional layers on training process and test performance. 
 
