@@ -17,7 +17,7 @@
 
 ## 1.Present the sample images and generated caption for each epoch of training for both the RNN and LSTM version of the decoder, including the BLEU scores. 
 
-###### LSTM MODEL
+**LSTM MODEL**
 
 ![IM1LSTM](https://user-images.githubusercontent.com/61549398/99193356-5fae2200-2770-11eb-97cc-a195b8a0b431.png)
 ![CAP1LSTM](https://user-images.githubusercontent.com/61549398/99193358-6046b880-2770-11eb-9074-44dfed328132.png)
@@ -28,7 +28,7 @@
 
 Figure 1: Performance of LSTM during training on two images.
   
-###### RNN MODEL
+**RNN MODEL**
 
 ![IM1RNN](https://user-images.githubusercontent.com/61549398/99193657-5920aa00-2772-11eb-8c93-4bfbbf287a03.png)
 ![CAP1RNN](https://user-images.githubusercontent.com/61549398/99193661-5a51d700-2772-11eb-9e9e-09e4dcefd207.png)
@@ -41,7 +41,7 @@ Figure 2: Performance of RNN model during training on two images.
 ## 2.Comparing training using an RNN vs LSTM for the decoder network (loss, BLEU scores over test set, quality of generated captions, performance on long captions vs. short captions, etc.)
 
 
-###### INTRODUCTION TO BLEU SCORE
+**INTRODUCTION TO BLEU SCORE**
 
 As compared to other NLP tasks such as document classification, where evaluation of a model’s performance can be based on simple metrics such as accuracy or precision and recall, evaluation of generated captions is a more complex task.
 
@@ -53,7 +53,7 @@ Another way of calculating the bleu score which is used in this report is cumula
 
 The Bleu score was designed with the idea of document level comparison where in some sentences finding a 4-gram match between reference and candidate text was not rare. However, because we perform sentence level comparison smoothing function is employed as advised by Chen and Cherry (2014). The results of their study in which their assessed all seven smoothing methods show that method 7 provides the best human correlation therefore this method is chosen for this report.
 
-###### COMPARISON BETWEEN THE MODELS
+**COMPARISON BETWEEN THE MODELS**
 
 In order to compare Bleu Scores for both models, five captions where generated for images from the test set after training for five epochs (See Appendix 1). Due to a small sample size (5 captions) the bleu score was also calculated for the whole test set to validate the results.
 
@@ -73,7 +73,7 @@ Bleu score over test set for RNN is 0.47576659190283077
 
 Although the performance of LSTM is slightly higher than RNN, the difference is not significant, therefore further analysis is required.
   
-###### PERFORMANCE ON LONG VS SHORT CAPTIONS
+**PERFORMANCE ON LONG VS SHORT CAPTIONS**
   
 Two models were evaluated in terms of their performance on long vs short captions using Bleu score metric.
 
@@ -89,7 +89,7 @@ We can see that both models performed better in short captions as compared to lo
 The results confirm out previous findings from section 3.1.2 whereas bleu scores for both models were calculated over the whole test set. Again performance of LSTM is better than LSTM.
   
   
-###### QUALITATIVE ASSESSMENT OF GENERATED CAPTIONS
+**QUALITATIVE ASSESSMENT OF GENERATED CAPTIONS**
   
   
 Although the Bleu score gives an idea of how well candidate text matches reference text, it is based on simple assumption of comparing the two pieces of text based on matching n-grams and is unable to assess the semantic meaning of the caption what leads to low scores if the length of reference and candidate text differs or if they use different words even if the words are synonyms. Therefore further evaluation is required to analyse the captions produced by the two models.
@@ -106,7 +106,7 @@ The activity of fourth image was corectly described by both models with minor mi
 
 Both captions generated for fifth image are related to the picture although they both describe the image with minor mistakes. Both models recognized a snowy field correctly however both failed to recognized activity and color of a jacket. However RNN model did not recognize that the picture describes an adult rathen than a young boy therefore we can say that LSTM again outperformed RNN model.
 
-###### LOSS EVALUATION
+**LOSS EVALUATION**
 
 The losses during training were collected and saved in a list. In image caption generation, we use cross entropy loss between the integer vectors of target ground true sequence and vector of generated caption (Zhu, Li, Liu, Guo, Fang, Peng, Niu, 2018). 
 
