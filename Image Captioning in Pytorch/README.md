@@ -15,21 +15,20 @@
 
 
 
-## Present the sample images and generated caption for each epoch of training for both the RNN and LSTM version of the decoder, including the BLEU scores. 
+## 1.Present the sample images and generated caption for each epoch of training for both the RNN and LSTM version of the decoder, including the BLEU scores. 
 
-## LSTM MODEL
+###### LSTM MODEL
 
 Figure 1: Performance of LSTM during training on two images Before training wide jockeys jockeys <pad> bite seagulls 6 casting nearby strip rooftop rooftop colored trampoline australian branches van stream Bleu score for generated caption:0 Epoch 1 a man in a red shirt and a red shirt and a red shirt and a red shirt Bleu score for generated caption: 0.36782464652822755 Epoch 2 a young boy in a red shirt and a soccer ball Bleu score for generated caption: 0.6040838284408129 Epoch 3 a boy in a blue shirt is running in a field Bleu score for generated caption: 0.5522140868786254 Epoch 4 two young boys playing soccer Bleu score for generated caption: 0.29752788609406255 Epoch 5 a boy in a red uniform is playing soccer Bleu score for generated caption: 0.6229866270637691 Before training race feathered eat eat pale match officers folded electronic or balding balding crashing genocide genocide bodies nice wooded Bleu score for generated caption:0 Epoch 1 a man in a red shirt is jumping over a rock Bleu score for generated caption: 0.4723402003873197 Epoch 2 a man is standing on a rock overlooking a mountain Bleu score for generated caption: 0.5111426965217781 Epoch 3 a man is rock climbing Bleu score for generated caption: 0.35988957722672366 Epoch 4 a man is rock climbing Bleu score for generated caption: 0.35988957722672366 Epoch 5 a man is rock climbing Bleu score for generated caption: 0.35988957722672366
   
-## RNN MODEL
+###### RNN MODEL
 
 Figure 2: Performance of RNN model during training on two images Before training eat ride heavy curb tourists hikes headdress horse floors cones makeup competition flat enclosed sunny muzzles lounge repels Bleu score for generated caption:0 Epoch 1 two children are playing in a field Bleu score for generated caption: 0.5153939645243383 Epoch 2 a boy in a blue shirt is kicking a soccer ball Bleu score for generated caption: 0.5782537389840694 Epoch 3 a boy in a blue shirt is running with a tennis ball in a field Bleu score for generated caption: 0.5105593001127932 Epoch 4 a young boy in a red uniform is running with a ball Bleu score for generated caption: 0.45272728894361675 Epoch 5 a boy in a red shirt is running with a ball in the air Bleu score for generated caption: 0.6022782201270712 Before Training world coloring single girls sale tents sharp gowns fan rescue ferry stuck lambs sings traverses shower campsite unhappy Bleu score for generated caption:0 Epoch 1 a man is riding a bike on a skateboard Bleu score for generated caption: 0.5019846346860442 Epoch 2 a man is riding a bicycle on a dirt bike Bleu score for generated caption: 0.42427489304239147 Epoch 3 a man is standing on a rock Bleu score for generated caption: 0.6442534123707138 Epoch 4 a man in a red shirt is climbing a rock face Bleu score for generated caption: 0.4723402003873197 Epoch 5 a man in a red shirt is climbing a rock Bleu score for generated caption: 0.4465502347955529
 
-## Comparing training using an RNN vs LSTM for the decoder network (loss, BLEU scores over test set, quality of generated captions, performance on long captions vs. short captions, etc.)
+## 2.Comparing training using an RNN vs LSTM for the decoder network (loss, BLEU scores over test set, quality of generated captions, performance on long captions vs. short captions, etc.)
 
-3.1 Bleu score
 
-3.1.1 Introduction to Bleu Score
+###### Introduction to Bleu Score
 
 As compared to other NLP tasks such as document classification, where evaluation of a model’s performance can be based on simple metrics such as accuracy or precision and recall, evaluation of generated captions is a more complex task.
 
@@ -39,7 +38,7 @@ Another way of calculating the bleu score which is used in this report is cumula
 
 The Bleu score was designed with the idea of document level comparison where in some sentences finding a 4-gram match between reference and candidate text was not rare. However, because we perform sentence level comparison smoothing function is employed as advised by Chen and Cherry (2014). The results of their study in which their assessed all seven smoothing methods show that method 7 provides the best human correlation therefore this method is chosen for this report.
 
-3.1.2 Comparison between the models
+###### Comparison between the models
 
 In order to compare Bleu Scores for both models, five captions where generated for images from the test set after training for five epochs (See Appendix 1). Due to a small sample size (5 captions) the bleu score was also calculated for the whole test set to validate the results.
 We can see that the generated captions in our sample of 5 images obtained Bleu scores in range 0.28 – 0.66 (See Appendix 1). Although the highest score of 0.66 is still far from the perfect match of 1.0, we have to remember that it is difficult to obtain a score around 1.0 even using human written captions. This is because the Bleu score penaltizes any mismatches between reference and candidate. If the caption describes the image well but using different words or if the candidate has a different length than the true caption, the score gets reduced.
@@ -50,7 +49,7 @@ This time the Bleu score was calculated for each single image in the test set. T
   
 The results are as follows: Bleu score over test set for LSTM is 0.48773541110981267 Bleu score over test set for RNN is 0.47576659190283077 Although the performance of LSTM is slightly higher than RNN, the difference is not significant, therefore further analysis is required.
   
-3.2 Performance on LONG vs SHORT captions
+###### Performance on LONG vs SHORT captions
   
 Two models were evaluated in terms of their performance on long vs short captions using Bleu score metric.
 The Bleu score was calculated separately for long vs short captions for each model. Decision as to whether assign a generated caption to long or short category was based on the average length of reference captions. Because of the fact that we have 5 reference captions agaisnt 1 generated caption, the total number of tokens for all 5 reference captions was calculated and then divided by 5 what allowed me to obtain the average number of tokens for each set of reference caption. I then compared the number of tokens from generated caption against the average number of tokens for reference caption. Generated caption was classified as long if its number of tokens was greater than the average number of tokens for a corresponding set of reference caption.
@@ -59,12 +58,14 @@ The bleu score was calculated using the same weights as before including smoothi
 The results are as follows:
   
 RNN Bleu score for short caption: 0.4022034590856351 Bleu score for long caption: 0.35662719914252705
+
 LSTM Bleu score for short caption: 0.4259603787052534 Bleu score for long caption: 0.38259930514032164
+
 We can see that both models performed better in short captions as compared to long captions resulting in higher bleu scores for short captions.
 The results confirm out previous findings from section 3.1.2 whereas bleu scores for both models were calculated over the whole test set. Again performance of LSTM is better than LSTM.
   
   
-3.3 Qualitative assessmnet of generated captions
+###### Qualitative assessmnet of generated captions
   
   
 Although the Bleu score gives an idea of how well candidate text matches reference text, it is based on simple assumption of comparing the two pieces of text based on matching n-grams and is unable to assess the semantic meaning of the caption what leads to low scores if the length of reference and candidate text differs or if they use different words even if the words are synonyms. Therefore further evaluation is required to analyse the captions produced by the two models.
@@ -76,7 +77,7 @@ In terms of the third image we can say that again LSTM perfomed better. The capt
 The activity of fourth image was corectly described by both models with minor mistake made by RNN model which incorectly identified a bleu shirt on the picture.
 Both captions generated for fifth image are related to the picture although they both describe the image with minor mistakes. Both models recognized a snowy field correctly however both failed to recognized activity and color of a jacket. However RNN model did not recognize that the picture describes an adult rathen than a young boy therefore we can say that LSTM again outperformed RNN model.
 
-3.4 Loss Evaluation 
+###### Loss Evaluation 
 
 The losses during training were collected and saved in a list. In image caption generation, we use cross entropy loss between the integer vectors of target ground true sequence and vector of generated caption (Zhu, Li, Liu, Guo, Fang, Peng, Niu, 2018). The graph below (see Figure 3) shows the losses for both models. We can see that they follow similar pattern slowy decreasing with RNN loss increasing after 4th spoch. That results in a final loss for LSTM of 2.3519 being sligthly smaller than the final loss for the RNN model of 2.5529. However, it is a common phenomenon is deep learning that loss fluctuates during training.
 Figure 3: Graph of losses from LSTM and RNN models during training
@@ -85,15 +86,11 @@ The loss for both models is clearly converging however the final losses are stil
 Additionally, attention layer could be used in order to focus on the most relevant parts of the image for determination of words by our network (Rister, Lawson, 2016).
 However, by looking at captions generated during training (see Figure 1 and Figure 2) using the basic version of the model and training only for 5 epochs, the captions generated after each epoch are significantly improving. There is a significant semantic difference between captions generated after 1st and 2nd epoch (see Figure 1, top image). The LSTM model correctly identified that instead of men (as predicted after 1st epoch) there is a young boy. Moreover, two other important elements, a soccer ball and a red t-shirt was correctly generated by the caption. The caption generated after 5th epoch best describes an image as : ‘a boy in a red uniform is playing soccer’, leading to the highest Bleu score. We can see similar improvements being made using RNN model (See Figure 2, top image), however the quality of the final caption is slightly worse. On the other hand, caption generated for the second image (See Figure 1 and 2, bottom image) have many major mistakes. Although they both relate to the image there are some
 major mistakes such as activity being recognized incorrectly. This can be explained by the fact that some images are difficult for the network to learn.
-  
-  
-  
-  
 
 
 
 
-References:
+## References:
 
 Jabeen, H., 2018. Stemming And Lemmatization In Python. [online] DataCamp Community. Available at: <https://www.datacamp.com/community/tutorials/stemming-lemmatization-python> [Accessed 23 April 2020]. 
 
