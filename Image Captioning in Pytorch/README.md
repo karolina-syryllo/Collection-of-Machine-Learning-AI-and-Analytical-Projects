@@ -19,11 +19,18 @@
 
 ###### LSTM MODEL
 
-Figure 1: Performance of LSTM during training on two images Before training wide jockeys jockeys <pad> bite seagulls 6 casting nearby strip rooftop rooftop colored trampoline australian branches van stream Bleu score for generated caption:0 Epoch 1 a man in a red shirt and a red shirt and a red shirt and a red shirt Bleu score for generated caption: 0.36782464652822755 Epoch 2 a young boy in a red shirt and a soccer ball Bleu score for generated caption: 0.6040838284408129 Epoch 3 a boy in a blue shirt is running in a field Bleu score for generated caption: 0.5522140868786254 Epoch 4 two young boys playing soccer Bleu score for generated caption: 0.29752788609406255 Epoch 5 a boy in a red uniform is playing soccer Bleu score for generated caption: 0.6229866270637691 Before training race feathered eat eat pale match officers folded electronic or balding balding crashing genocide genocide bodies nice wooded Bleu score for generated caption:0 Epoch 1 a man in a red shirt is jumping over a rock Bleu score for generated caption: 0.4723402003873197 Epoch 2 a man is standing on a rock overlooking a mountain Bleu score for generated caption: 0.5111426965217781 Epoch 3 a man is rock climbing Bleu score for generated caption: 0.35988957722672366 Epoch 4 a man is rock climbing Bleu score for generated caption: 0.35988957722672366 Epoch 5 a man is rock climbing Bleu score for generated caption: 0.35988957722672366
+![IM1LSTM](https://user-images.githubusercontent.com/61549398/99193356-5fae2200-2770-11eb-97cc-a195b8a0b431.png)
+![CAP1LSTM](https://user-images.githubusercontent.com/61549398/99193358-6046b880-2770-11eb-9074-44dfed328132.png)
+
+![IM2LSTM](https://user-images.githubusercontent.com/61549398/99193485-275b1380-2771-11eb-80d8-ee2b7cb83830.png)
+![CAP2LSTM](https://user-images.githubusercontent.com/61549398/99193486-288c4080-2771-11eb-8e36-ec52636b41c8.png)
+
+
+Figure 1: Performance of LSTM during training on two images.
   
 ###### RNN MODEL
 
-Figure 2: Performance of RNN model during training on two images Before training eat ride heavy curb tourists hikes headdress horse floors cones makeup competition flat enclosed sunny muzzles lounge repels Bleu score for generated caption:0 Epoch 1 two children are playing in a field Bleu score for generated caption: 0.5153939645243383 Epoch 2 a boy in a blue shirt is kicking a soccer ball Bleu score for generated caption: 0.5782537389840694 Epoch 3 a boy in a blue shirt is running with a tennis ball in a field Bleu score for generated caption: 0.5105593001127932 Epoch 4 a young boy in a red uniform is running with a ball Bleu score for generated caption: 0.45272728894361675 Epoch 5 a boy in a red shirt is running with a ball in the air Bleu score for generated caption: 0.6022782201270712 Before Training world coloring single girls sale tents sharp gowns fan rescue ferry stuck lambs sings traverses shower campsite unhappy Bleu score for generated caption:0 Epoch 1 a man is riding a bike on a skateboard Bleu score for generated caption: 0.5019846346860442 Epoch 2 a man is riding a bicycle on a dirt bike Bleu score for generated caption: 0.42427489304239147 Epoch 3 a man is standing on a rock Bleu score for generated caption: 0.6442534123707138 Epoch 4 a man in a red shirt is climbing a rock face Bleu score for generated caption: 0.4723402003873197 Epoch 5 a man in a red shirt is climbing a rock Bleu score for generated caption: 0.4465502347955529
+Figure 2: Performance of RNN model during training on two images.
 
 ## 2.Comparing training using an RNN vs LSTM for the decoder network (loss, BLEU scores over test set, quality of generated captions, performance on long captions vs. short captions, etc.)
 
