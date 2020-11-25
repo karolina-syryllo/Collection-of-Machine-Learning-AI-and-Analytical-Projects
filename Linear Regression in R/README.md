@@ -66,7 +66,9 @@ The values were calculated using the code below:
 
        plot(log10(d$predicted_2016), log10(d$Medal2016), xlab="Predicted values", ylab="Actual values", main="Predicted vs Actual values for 2016", xlim=range(0:2.5),   ylim=range(0:2.5)) abline(a=0, b=1, xlim=1)
        
-![plot](https://user-images.githubusercontent.com/61549398/100264464-c7b9f080-2f46-11eb-8d07-4b3be10d8f09.png)
+
+![plot_better](https://user-images.githubusercontent.com/61549398/100267071-bf63b480-2f4a-11eb-8ccc-4b1486ddd6f8.png)
+
 
 Interpretation:
 
@@ -77,7 +79,6 @@ The diagonal line shows data points for which predicted and actual values are eq
 If the point is below the line, predicted value is higher than actual value, while in case when the point is above the line, predicted value is less than actual value.
 We can see that there are only few points which were well predicted with many points being far from the line what suggests that our predictions are not very accurate.
 
-![plot](https://user-images.githubusercontent.com/61549398/100264464-c7b9f080-2f46-11eb-8d07-4b3be10d8f09.png)
 
 Outliers:
 
@@ -140,4 +141,32 @@ Cross Validation results confirm that model 2 (“Medal2016 ~ GDP”) has the hi
       
       
    ![hist](https://user-images.githubusercontent.com/61549398/100266836-6136d180-2f4a-11eb-8377-44afaeafd2d7.png)
+   
+   
+ The results are consisted with the previous results when we used AIC criterion. At that time, the best model was the model which uses GDP only to predict number of medals. The same results were obtained using Cross Validation.
+ 
+ ## 7. Using the three fitted models from Q1, predict the results of Rio 2016. Which predicts best? Compare this result with earlier answers.
+ 
+ In order to determine which model predicts best, MSE is used. MSE is the mean squared error measured between predicted value and actual value. The model which predicts best is the model which minimizes the MSE.
+ 
+We can see that the model with the lowest MSE is the model which uses GDP only, while the model which gives the worst prediction is the model which uses Population only. These results are consisted with results obtained in previous parts. According to AIC, the best model was the model with GDP only and the same applies to our Cross Validation’s result.
 
+
+      library("MLmetrics")
+      
+      ## ## Attaching package: 'MLmetrics'
+     
+      predicted_2016_pop=predict(medal_2012_pop, medal_data) 
+      
+      predicted_2016_gdp=predict(medal_2012_gdp, medal_data) 
+      
+      predicted_2016_both=predict(medal_2012_both, medal_data) 
+      
+      
+      
+      MSE_pop=MSE(y_pred=predicted_2016_pop, y_true=medal_data$Medal2016) 
+      
+      cat("\nMSE for medal count based on Population only is ", MSE_pop) ##
+      
+      
+      ## MSE for medal count based on Population only is 330.5405 MSE_gdp=MSE(y_pred=predicted_2016_gdp, y_true=medal_data$Medal2016) cat("\nMSE for medal count based on GDP only is ", MSE_gdp) ## ## MSE for medal count based on GDP only is 79.35504 MSE_both=MSE(y_pred=predicted_2016_both, y_true=medal_data$Medal2016) cat("\nMSE for medal count based on both Population and GDP is ", MSE_both) ## ## MSE for medal count based on both Population and GDP is 83.03936
