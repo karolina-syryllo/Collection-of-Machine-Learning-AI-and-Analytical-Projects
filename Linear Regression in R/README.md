@@ -174,4 +174,7 @@ We can see that the model with the lowest MSE is the model which uses GDP only, 
       ## MSE for medal count based on GDP only is 79.35504 
       
       MSE_both=MSE(y_pred=predicted_2016_both, y_true=medal_data$Medal2016)
-      cat("\nMSE for medal count based on both Population and GDP is ", MSE_both) ## ## MSE for medal count based on both Population and GDP is 83.03936
+      cat("\nMSE for medal count based on both Population and GDP is ", MSE_both) 
+      
+      ## 
+      ## MSE for medal count based on both Population and GDP is 83.03936
