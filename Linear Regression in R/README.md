@@ -157,22 +157,21 @@ We can see that the model with the lowest MSE is the model which uses GDP only, 
       ## ## Attaching package: 'MLmetrics'
      
       predicted_2016_pop=predict(medal_2012_pop, medal_data) 
-      
       predicted_2016_gdp=predict(medal_2012_gdp, medal_data) 
-      
       predicted_2016_both=predict(medal_2012_both, medal_data) 
       
       
-      
       MSE_pop=MSE(y_pred=predicted_2016_pop, y_true=medal_data$Medal2016) 
+      cat("\nMSE for medal count based on Population only is ", MSE_pop)
       
-      cat("\nMSE for medal count based on Population only is ", MSE_pop) ##
+      ##
+      ## MSE for medal count based on Population only is 330.5405 
       
-      
-      ## MSE for medal count based on Population only is 330.5405 MSE_gdp=MSE(y_pred=predicted_2016_gdp, y_true=medal_data$Medal2016) 
-      
+      MSE_gdp=MSE(y_pred=predicted_2016_gdp, y_true=medal_data$Medal2016) 
       cat("\nMSE for medal count based on GDP only is ", MSE_gdp) 
       
-      ## ## MSE for medal count based on GDP only is 79.35504 MSE_both=MSE(y_pred=predicted_2016_both, y_true=medal_data$Medal2016)
+      ## 
+      ## MSE for medal count based on GDP only is 79.35504 
       
+      MSE_both=MSE(y_pred=predicted_2016_both, y_true=medal_data$Medal2016)
       cat("\nMSE for medal count based on both Population and GDP is ", MSE_both) ## ## MSE for medal count based on both Population and GDP is 83.03936
