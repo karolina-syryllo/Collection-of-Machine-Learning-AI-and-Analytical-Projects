@@ -67,7 +67,7 @@ The values were calculated using the code below:
        plot(log10(d$predicted_2016), log10(d$Medal2016), xlab="Predicted values", ylab="Actual values", main="Predicted vs Actual values for 2016", xlim=range(0:2.5),   ylim=range(0:2.5)) abline(a=0, b=1, xlim=1)
        
 
-![plot_better](https://user-images.githubusercontent.com/61549398/100267071-bf63b480-2f4a-11eb-8ccc-4b1486ddd6f8.png)
+![best_plot](https://user-images.githubusercontent.com/61549398/100268735-5598da00-2f4d-11eb-8733-b0b0eaac5e62.png)
 
 
 Interpretation:
