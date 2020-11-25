@@ -8,3 +8,5 @@ To interpret the results of regression analysis, firstly p-values will be examin
 
 P-values decide whether we can reject the null hypothesis that a coefficient has no effect on output variable (is equal to zero). The results are statistically significant if p-value for corresponding coefficient is less than 0.05.
 
+
+
