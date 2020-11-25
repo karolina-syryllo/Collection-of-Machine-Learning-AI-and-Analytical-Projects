@@ -21,7 +21,7 @@ Results:
 ![1reg](https://user-images.githubusercontent.com/61549398/100259928-ba016c80-2f40-11eb-983f-d03fee2d6224.png)
 
 
-## Interpretation of regression for medal count in 2008:
+***Interpretation of regression for medal count in 2008:***
 
 
 GDP is statistically significant as its p-value is less than 0.05, while Population is not statistically significant with p-value equal to 0.246750. This suggests that a change in GDP is associated with the change in Medal count for 2008 while change in Population is not associated with the change in Medal count for 2008.
@@ -41,7 +41,7 @@ Regression for 2012
 ![reg2](https://user-images.githubusercontent.com/61549398/100260278-241a1180-2f41-11eb-8dce-86513a95bf0e.png)
 
 
-Interpretation of regression for medal count in 2012:
+***Interpretation of regression for medal count in 2012:***
 
 Again, Population is not statistically significant with high p-value of 0.468225, while GDP is statistically significant with p-value below 0.05. Therefore, there is no association between Population and number of medals in 2012, but there is a relationship between GDP and the number of medals in 2012.
 
@@ -70,7 +70,7 @@ The values were calculated using the code below:
 ![best_plot](https://user-images.githubusercontent.com/61549398/100268735-5598da00-2f4d-11eb-8733-b0b0eaac5e62.png)
 
 
-Interpretation:
+***Interpretation:***
 
 The graph shows predicted and actual values for the number of medals in 2016. The values have been transformed using logarithmic transformation and axes were adjusted accordingly.
 
@@ -80,7 +80,7 @@ If the point is below the line, predicted value is higher than actual value, whi
 We can see that there are only few points which were well predicted with many points being far from the line what suggests that our predictions are not very accurate.
 
 
-Outliers:
+***Outliers:***
 
 In order to analyze outliers, boxplot function was employed. In R, boxplot classifies points as outliers based on the Interquartile range. The point is an outlier if it is less than Q1 - 1.5 * IQR or greater than Q3 + 1.5 * IQR. Based on that, three countries were classified as outliers, namely: Great Britain, India and Russian Federation.
 
@@ -128,7 +128,7 @@ In order to analyze outliers, boxplot function was employed. In R, boxplot class
  ![weird_plot](https://user-images.githubusercontent.com/61549398/100265999-fc2eac00-2f48-11eb-869b-f75bc2ab2cc1.png)
 
 
-Interpretation:
+**Interpretation:**
 
 Cross Validation results confirm that model 2 (“Medal2016 ~ GDP”) has the highest log-probability for test outputs. However, the difference between model 2 and 3 is very small. Therefore, in order to ensure that we chose the best model, the same procedure is repeated 100 times. The results confirmed that the best model is model 2.
 
