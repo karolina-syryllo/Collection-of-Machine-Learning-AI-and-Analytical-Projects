@@ -1,6 +1,6 @@
 # Introduction
 
-The aim of this assignment is to analyse the effect of different demographical factors on Brexit Vote. The output variable is called voteBrexit, and gives a TRUE/FALSE answer to the question ‘did this electoral ward vote for Brexit?’ (i.e. did more than 50% of people vote to Leave?). Given a binomial nature of the outcome variable, the best model to for this task is a logistic regression.  
+The aim of this assignment is to analyse the effect of different demographical factors on Brexit Vote. The output variable is called voteBrexit, and gives a TRUE/FALSE answer to the question ‘did this electoral ward vote for Brexit?’ (i.e. did more than 50% of people vote to Leave?). Given a binomial nature of the outcome variable, the best model to for this task is a logistic regression. The results from the logistic regression will be then compared with the results achieved from running a decision tree model.
 
 The 5 possible input variables are:
 - **abc1**: proportion of individuals who are in the ABC1 social classes (middle to upper class)
@@ -196,6 +196,49 @@ Stage 4 revealed that combination of the previous three variables (withHigherEd,
                   
                   
                   
+ ## 4. Running a decision tree classification model. 
+ 
+ 
+
+                  #install.packages("rpart") 
+                  library("rpart")
                   
+                  mytree=rpart(voteBrexit~ abc1+notBornUK+medianIncome+medianAge+withHigherEd, data=brexit, method="class")
+                  
+                  #install.packages("rpart.plot") 
+                  library("rpart.plot")
+                  
+                  prp(mytree)
+                  
+![tree](https://user-images.githubusercontent.com/61549398/104133179-c9fecf80-5379-11eb-9377-139fb93f9560.png)
+
+In decision tree models, each branch tests the outcome variable whether it outputs TRUE or FALSE. In our case, TRUE means that they voted for Brexit while FALSE means they did not.
+
+The model tells us that the most informative feature is withHigherEd variable hence the first decision is based on that. If the value of variable withHigherEd is greater than 0.47, then this is associated with the Remain vote. If it’s less than 0.47, then it looks at another variable notBornUK to make a decision. If its value is greater than 0.43, then this is associated with the Remain vote, while if it is less ,then it looks at withHigherEd variable again. If in this case, the value of withHigherEd is lower than 0.31, this is associated with the vote of Leave, while if it is greater, then it looks at abc1 variable. If it is less than 0.41, then it is associated with the Remain vote while if it is greater than 0.41 it is associated with Leave vote.
+
+## 5. Comparing decision tree model and your logistic regression model. 
 
 
+For logistic regression model, we already established which variables give the strongest and weakest effect in part 1. This was done by checking the absolute value of coefficients after running the regression on standardized values of explanatory variables.
+
+The features’ importance is represented below, with the most important feature being on the top.
+
+- 1. withHigherEd
+- 2. abc1
+- 3. medianAge
+- 4. notBornUK
+- 5. median Income
+
+Decision tree model gives different priority to our features. Although both models agree that the most important factor is variable withHigherEd, the importance of remaining features is different for those two models.
+
+In decision tree, the second most important factor is notBornUK, while according to logistic regression this is the second least important factor. Similarly, for logistic regression the third most important factor is medianAge, while for decision tree this variable is not even taken into account.
+
+Both models attach slightly different level of importance for explanatory variables and also the direction of the effect is slightly different for the models. We can therefore say that both models explain the referendum vote differently.
+
+In terms of logistic regression, an increase in higher education and median income decreases the probability of voting for Leave. However an increase in all of the remaining factors is associated with an increase in the probability for voting for Leave.
+
+For decision tree, the greater proportion of people with higher education is associated with the Remain Vote, and the greater proportion of people not born in UK is also associated with the vote of Remain. On the other hand, the greater proportion of people in the middle to upper class is associated with the Leave vote.
+
+We can therefore conclude that increase in proportion of people with higher education is associated with increase in the probability of the Remain Vote for both models and increase in the proportion of people in middle to upper class is associated with the Leave vote in both models. However, in decision tree, the higher proportion of people not born in UK is associated with the vote for Remain while in logistic regression this is associated with the vote for Leave.
+
+The model I would choose for explaining the results for a newspaper article is the decision tree model. Most of the readers probably do come from non-statistical background what makes them harder to understand the results of logistic regression. With decision tree interpretation is very easy even for people who do not have statistical knowledge.
