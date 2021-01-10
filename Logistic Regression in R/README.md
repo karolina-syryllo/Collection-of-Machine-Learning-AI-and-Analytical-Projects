@@ -55,7 +55,21 @@ The code below was used to calculate the value of the confidence interval for th
                   print(paste("Abc1 Max: ", CI_max_abc1)) 
                   ## [1] "Abc1 Max: 23.2842718890574"
                   
-![print](https://user-images.githubusercontent.com/61549398/104131528-c0bc3580-536e-11eb-80a9-771e40649b1f.png)
+                  
+                  1] "Abc1 Min: 11.8717241841725"
+                  [1] "Abc1 Max: 23.2842718890574"
+                  [1] "Not Born Min: 2.15166883329817"
+                  [1] "Not born Max: 9.22060779588884"
+                  [1] "Income Min: -10.1522039945514"
+                  [1] "Icome Max: -2.61927527070331"
+                  [1] "Age Min: 3.16406662412453"
+                  [1] "Age Max: 8.67768687448136"
+                  [1] "Education Min: -33.7534564486837"
+                  [1] "Education Max: -19.7350619427495"
+                  
+                  
+                  
+                 
 
 In order to decide which variable has the strongest effect, I created a copy of my current dataset and standardized the values of explanatory variables using the function scale( ) in R before running the model. This allowed me to directly compare estimates of the coefficients as now they use the same scale. The coefficient with the greatest absolute value is the one which has the strongest effect.
 
