@@ -20,3 +20,21 @@ Uploading data and running the model.
       mymodel=glm(formula=voteBrexit~abc1+notBornUK+medianIncome+medianAge+withHigherEd,family=binomial, data=brexit) 
       summary(mymodel)
 
+
+![logist](https://user-images.githubusercontent.com/61549398/104131415-09bfba00-536e-11eb-871f-bf80c826d69e.png)
+
+
+**Interpretation:**
+
+The outcome variable answers the question whether a person voted for Brexit or not. The True outcome is in case when people voted to leave while False if they voted to remain.
+This is important when interpreting the magnitude of coefficients. If the coefficient is negative it means that an increase in a given variables is not associated with an increase in the probability of voting for Leave, while positive sign of coefficient is associated with the Leave vote.
+
+**ab1**- The sign of the coefficient is positive therefore an increase in ab1 is associated with an increase in the probability of voting for Leave. For every unit increase in ab1, the log odds of Brexit Vote increases by 17.5780. 
+
+**notBornUK** – The sign of the coefficient is again positive therefore the fact that a person was not Born in UK is associated with the Leave vote. For every unit increase in notBornUK, the log odds of Brexit Vote increases by 5.6861. 
+
+**medianIncome**- The sign of the coefficient is negative therefore increase in median income is associated with a decrease in the probability of Leave vote. In other words, people with higher income voted for Remain. For every unit increase in medianIncome, the log odds of Brexit Vote decreases by 6.3857.
+
+**medianAge**- The sign of the coefficient is positive therefore increase in median age is associated with an increase in the probability of Leave vote. For every unit increase in medianAge, the log odds of Brexit Vote increases by 5.9209. 
+
+**withHigherEd**- The sign of the coefficient is negative therefore increase in higher education is not associated with an increase in the probability for the Leave vote. For every unit increase in withHigherEd, the log odds of Brexit Vote decreases by 26.7443. 
