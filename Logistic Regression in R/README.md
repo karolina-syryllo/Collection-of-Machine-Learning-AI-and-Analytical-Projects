@@ -11,3 +11,12 @@ The 5 possible input variables are:
 
 These are normalised so that the lowest value is zero and the highest value is one. Data is analysed using R software.
 
+
+# 1. Logistic regression models using all of the available inputs. 
+
+Uploading data and running the model.
+
+      brexit=read.csv("brexit(2).csv") 
+      mymodel=glm(formula=voteBrexit~abc1+notBornUK+medianIncome+medianAge+withHigherEd,family=binomial, data=brexit) 
+      summary(mymodel)
+
