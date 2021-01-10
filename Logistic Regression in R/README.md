@@ -38,3 +38,34 @@ This is important when interpreting the magnitude of coefficients. If the coeffi
 **medianAge**- The sign of the coefficient is positive therefore increase in median age is associated with an increase in the probability of Leave vote. For every unit increase in medianAge, the log odds of Brexit Vote increases by 5.9209. 
 
 **withHigherEd**- The sign of the coefficient is negative therefore increase in higher education is not associated with an increase in the probability for the Leave vote. For every unit increase in withHigherEd, the log odds of Brexit Vote decreases by 26.7443. 
+
+
+# 2. Calculating the value of each coefficient estimate with a 95% confidence interval.
+
+The code below was used to calculate the value of the confidence interval for the first variable abc1. Confidence intervals for other variables have been calculated in the same way and the value for all confidence intervals is presented below.
+
+                  zc=qnorm(0.975) 
+                  estimate_abc1=summary(mymodel)$coefficients[2,1] 
+                  standard_error_abc1=summary(mymodel)$coefficients[2,2] 
+                  CI_min_abc1=estimate_abc1-zc*standard_error_abc1 
+                  CI_max_abc1=estimate_abc1+zc*standard_error_abc1 
+                  
+                  print(paste("Abc1 Min: ", CI_min_abc1)) 
+                  ## [1] "Abc1 Min: 11.8717241841725" 
+                  print(paste("Abc1 Max: ", CI_max_abc1)) 
+                  ## [1] "Abc1 Max: 23.2842718890574"
+                  
+![print](https://user-images.githubusercontent.com/61549398/104131528-c0bc3580-536e-11eb-80a9-771e40649b1f.png)
+
+In order to decide which variable has the strongest effect, I created a copy of my current dataset and standardized the values of explanatory variables using the function scale( ) in R before running the model. This allowed me to directly compare estimates of the coefficients as now they use the same scale. The coefficient with the greatest absolute value is the one which has the strongest effect.
+
+The results are as follows:
+
+                  summary(mymodel2)
+                  
+ ![log2](https://user-images.githubusercontent.com/61549398/104131649-9d45ba80-536f-11eb-8bc6-555170f8d398.png)
+ 
+ From the above output we can say that the variable which has the strongest effect is withHigherEd because it has the highest absolute value. This is followed by variable called abc1.
+ 
+On the other hand, the variable with the weakest effect is medianIncome.
+
