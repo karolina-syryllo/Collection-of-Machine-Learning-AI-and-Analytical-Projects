@@ -111,6 +111,91 @@ At each stage the quality of fit using aic is evaluated and stopped if this gets
                   ## ## AIC: 313.56
                   
                   Call: ## glm(formula = voteBrexit ~ withHigherEd, family = binomial, data = brexit)
+                  
+                  
+                  
 
+                  
+                  
+                  
+                  mymodel_education_abc1=glm(formula=voteBrexit~withHigherEd+abc1,family=binomial, data=brexit)
+                  summary(mymodel_education_abc1)
+                  
+                  ## Call: ## glm(formula = voteBrexit ~ withHigherEd + abc1, family = binomial, ## data = brexit) ## ## AIC: 286.55           
+                  
+              
+                  mymodel_education_notBorn=glm(formula=voteBrexit~withHigherEd+notBornUK,family=binomial, data=brexit)
+                  summary(mymodel_education_notBorn)
+                  
+                  ## Call: ## glm(formula = voteBrexit ~ withHigherEd + notBornUK, family = binomial, ## data = brexit) ## ## AIC: 310.3                  
+                  
+                  
+                  mymodel_education_income=glm(formula=voteBrexit~withHigherEd+medianIncome,family=binomial, data=brexit)
+                  summary(mymodel_education_income)
+                  
+                  ## Call: ## glm(formula = voteBrexit ~ withHigherEd + medianIncome, family = binomial, ## data = brexit) ## ## AIC: 315.53
+                  
+                  
+                  mymodel_education_age=glm(formula=voteBrexit~withHigherEd+medianAge,family=binomial, data=brexit)
+                  summary(mymodel_education_age)
+                  
+                  ## Call: ## glm(formula = voteBrexit ~ withHigherEd + medianAge, family = binomial, ## data = brexit) ## ## AIC: 303.31
+                  
+                  
+                  
+                  
+                  
+                  
+                  
+                  
+                  mymodel_education_abc1_notBorn=glm(formula=voteBrexit~withHigherEd+abc1+notBornUK,family=binomial, data=brexit)
+                  summary(mymodel_education_abc1_notBorn)
+                  
+                  ## Call: ## glm(formula = voteBrexit ~ withHigherEd + abc1 + notBornUK, family = binomial, ## data = brexit) ## ## AIC: 285.24
+                  
+                  
+                  
+                  mymodel_education_abc1_income=glm(formula=voteBrexit~withHigherEd+abc1+medianIncome,family=binomial, data=brexit)
+                  summary(mymodel_education_abc1_income)
+                  
+                  ## Call: ## glm(formula = voteBrexit ~ withHigherEd + abc1 + medianIncome, ## family = binomial, data = brexit) ## ## AIC: 275.93
+                  
+                  
+                  mymodel_education_abc1_age=glm(formula=voteBrexit~withHigherEd+abc1+medianAge,family=binomial, data=brexit)
+                  summary(mymodel_education_abc1_age)
+                  
+                  ## Call: ## glm(formula = voteBrexit ~ withHigherEd + abc1 + medianAge, family = binomial, ## data = brexit) ## ## AIC: 271.93
+                  
+                  
+                  mymodel_education_abc1_age_notborn=glm(formula=voteBrexit~withHigherEd+abc1+medianAge+notBornUK,family=binomial, data=brexit)
+                  summary(mymodel_education_abc1_age_notborn)
+                  
+                  ## Call: ## glm(formula = voteBrexit ~ withHigherEd + abc1 + medianAge + ## notBornUK, family = binomial, data = brexit) ##
+                  ## AIC: 269.11
+                  
+                  
+                  
+                  
+                  
+                  
+                  mymodel_education_abc1_age_income=glm(formula=voteBrexit~withHigherEd+abc1+medianAge+medianIncome,family=binomial, data=brexit)
+                  summary(mymodel_education_abc1_age_income)
+                  ## Call: ## glm(formula = voteBrexit ~ withHigherEd + abc1 + medianAge + ## medianIncome, family = binomial, data = brexit) ## ## AIC: 266.95
+                  
+                  
+                  
+                  
+                  
+                  
+We can see that with only one input variable, the model which minimizes AIC is the one which uses withHigherEd variable only, with AIC of 313.56. Therefore it will be used in stage 2 in which I will add one more additional explanatory variable.
+
+The stage 2 revealed that abc1 led to the lowest AIC score of 286.55 when combined with withHigherEd, therefore for stage 3 variables called withHigherEd and abc1 will be used.
+                  
+The stage 3 revealed that medianAge gave the lowest AIC when combined with withHigherEd and abc1, leading to lowest AIC score which we obtained so far of 271.93                  
+Stage 4 revealed that combination of the previous three variables (withHigherEd, abc1, medianAge) plus medianIncome gave the lowest AIC score of 266.95. However this value is still higher than in case of using the original model with all five explanatory variables. Therefore, we can conclude that the best model is the model which uses all five explanatory variables giving the AIC score of 259.39.                 
+                  
+                  
+                  
+                  
 
 
