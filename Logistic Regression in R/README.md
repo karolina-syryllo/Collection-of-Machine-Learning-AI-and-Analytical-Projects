@@ -21,7 +21,7 @@ Uploading data and running the model.
       summary(mymodel)
 
 
-![logist](https://user-images.githubusercontent.com/61549398/104131415-09bfba00-536e-11eb-871f-bf80c826d69e.png)
+![logist](https://user-images.githubusercontent.com/61549398/104131523-be59db80-536e-11eb-9cad-6e4586f85ab8.png)
 
 
 **Interpretation:**
