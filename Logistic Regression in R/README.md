@@ -12,7 +12,7 @@ The 5 possible input variables are:
 These are normalised so that the lowest value is zero and the highest value is one. Data is analysed using R software.
 
 
-# 1. Logistic regression models using all of the available inputs. 
+## 1. Logistic regression models using all of the available inputs. 
 
 Uploading data and running the model.
 
@@ -40,7 +40,7 @@ This is important when interpreting the magnitude of coefficients. If the coeffi
 **withHigherEd**- The sign of the coefficient is negative therefore increase in higher education is not associated with an increase in the probability for the Leave vote. For every unit increase in withHigherEd, the log odds of Brexit Vote decreases by 26.7443. 
 
 
-# 2. Calculating the value of each coefficient estimate with a 95% confidence interval.
+## 2. Calculating the value of each coefficient estimate with a 95% confidence interval.
 
 The code below was used to calculate the value of the confidence interval for the first variable abc1. Confidence intervals for other variables have been calculated in the same way and the value for all confidence intervals is presented below.
 
@@ -69,7 +69,7 @@ The results are as follows:
  
 On the other hand, the variable with the weakest effect is medianIncome.
 
-# 3. Using aic to perform a model selection and determine which factors are useful to predict the result of the vote.
+## 3. Using aic to perform a model selection and determine which factors are useful to predict the result of the vote.
 
 A ‘greedy’ input selection procedure was used as follows: 
 
