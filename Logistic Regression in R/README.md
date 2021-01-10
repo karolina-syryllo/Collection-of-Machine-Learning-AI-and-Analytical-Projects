@@ -79,11 +79,38 @@ A ‘greedy’ input selection procedure was used as follows:
 
 At each stage the quality of fit using aic is evaluated and stopped if this gets worse.
 
-                  mymodel_abc=glm(formula=voteBrexit~abc1,family=binomial, data=brexit) summary(mymodel_abc)
-                  
+                  mymodel_abc=glm(formula=voteBrexit~abc1,family=binomial, data=brexit) 
+                  summary(mymodel_abc)
+                 
                   ## Call: ## glm(formula = voteBrexit ~ abc1, family = binomial, data = brexit) ## ## AIC: 377.54
                   
                   
+                  mymodel_not_born=glm(formula=voteBrexit~notBornUK,family=binomial, data=brexit)
+                  summary(mymodel_not_born)
+                  
+                  Call: ## glm(formula = voteBrexit ~ notBornUK, family = binomial, data = brexit) ## ## AIC: 377.8
+                  
+                  
+                  mymodel_income=glm(formula=voteBrexit~medianIncome,family=binomial, data=brexit)
+                  summary(mymodel_income)
+                  
+                  Call: ## glm(formula = voteBrexit ~ medianIncome, family = binomial, data = brexit) ## ## AIC: 368.44
+                  
+                  
+                  
+                  mymodel_age=glm(formula=voteBrexit~medianAge,family=binomial, data=brexit)
+                  summary(mymodel_age)
+                  
+                  ## Call: ## glm(formula = voteBrexit ~ medianAge, family = binomial, data = brexit) ## ## AIC: 401.28      
+                  
+                 
+                  mymodel_education=glm(formula=voteBrexit~withHigherEd,family=binomial, data=brexit)
+                  summary(mymodel_education)
+                  
+                  ## Call: ## glm(formula = voteBrexit ~ withHigherEd, family = binomial, data = brexit)
+                  ## ## AIC: 313.56
+                  
+                  Call: ## glm(formula = voteBrexit ~ withHigherEd, family = binomial, data = brexit)
 
 
 
