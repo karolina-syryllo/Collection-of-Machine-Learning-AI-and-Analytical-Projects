@@ -223,11 +223,11 @@ For logistic regression model, we already established which variables give the s
 
 The features’ importance is represented below, with the most important feature being on the top.
 
-- 1. withHigherEd
-- 2. abc1
-- 3. medianAge
-- 4. notBornUK
-- 5. median Income
+- withHigherEd
+- abc1
+- medianAge
+- notBornUK
+- median Income
 
 Decision tree model gives different priority to our features. Although both models agree that the most important factor is variable withHigherEd, the importance of remaining features is different for those two models.
 
