@@ -69,10 +69,21 @@ The results are as follows:
  
 On the other hand, the variable with the weakest effect is medianIncome.
 
-# 3. 3. Using aic to perform a model selection and determine which factors are useful to predict the result of the vote.
+# 3. Using aic to perform a model selection and determine which factors are useful to predict the result of the vote.
 
 A ‘greedy’ input selection procedure was used as follows: 
 
 - selecting the best model with 1 input;
 - fixing that input and selecting the best two-input model
-- selecting the best three-input model containing the first two inputs you chose, etc. At each stage the quality of fit using aic is evaluated and stopped if this gets worse.
+- selecting the best three-input model containing the first two inputs you chose, etc. 
+
+At each stage the quality of fit using aic is evaluated and stopped if this gets worse.
+
+                  mymodel_abc=glm(formula=voteBrexit~abc1,family=binomial, data=brexit) summary(mymodel_abc)
+                  
+                  ## Call: ## glm(formula = voteBrexit ~ abc1, family = binomial, data = brexit) ## ## AIC: 377.54
+                  
+                  
+
+
+
